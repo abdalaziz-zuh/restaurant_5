@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f1e3; /* لون خلفية فاتح ودافئ */
+            color: #4b4b4b; /* نص داكن لراحة العين */
+        }
+        
+        .menu-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .menu-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .menu-header h1 {
+            font-size: 2.5em;
+            color: #9e2a2f; /* أحمر عتيق */
+        }
+        
+        .menu-category h2 {
+            font-size: 1.8em;
+            color: #7a4c31; /* بني تراثي */
+            border-bottom: 2px solid #9e2a2f; /* أحمر عتيق */
+            padding-bottom: 5px;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #7a4c31; /* بني تراثي */
+            border-radius: 5px;
+            background-color: #fff7e6; /* لون خلفية دافئ */
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .menu-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(154, 42, 47, 0.3); /* ظل أحمر عتيق */
+        }
+        
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .menu-item-info h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #7a4c31; /* بني تراثي */
+        }
+        
+        .menu-item-info p {
+            margin: 5px 0;
+            color: #4b4b4b; /* نص داكن */
+        }
+        
+        .menu-item-price {
+            font-size: 1.1em;
+            color: #9e2a2f; /* أحمر عتيق */
+            font-weight: bold;
+        }
+        
+        .item-quantity {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        
+        .quantity-button {
+            background-color: #9e2a2f; /* أحمر عتيق */
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            margin: 0 5px;
+        }
+        
+        .quantity-button:hover {
+            background-color: #7a4c31; /* بني تراثي */
+        }
+        
+        .quantity-display {
+            font-size: 1.1em;
+            color: #4b4b4b;
+        }
+        
+        .total-price {
+            text-align: center;
+            font-size: 1.5em;
+            color: #9e2a2f; /* أحمر عتيق */
+            margin-top: 20px;
+        }
+        
+        .confirm-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #7a4c31; /* بني تراثي */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        
+        .confirm-button:hover {
+            background-color: #9e2a2f; /* أحمر عتيق */
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: center; /* لتوسيط القائمة */
+            align-items: center;
+            padding: 1em 2em;
+            background-color: #7a4c31; /* لون صلب بدون شفافية */
+        }
+        
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            gap: 2em; /* مسافة بين العناصر */
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar .menu li a {
+            text-decoration: none;
+            color: beige; /* تغيير لون النص */
+            font-family: 'Aref Ruqaa', serif; /* تغيير نوع الخط */
+            font-size: 1.2em; /* تكبير حجم الخط */
+            transition: color 0.3s; /* تأثير عند التمرير */
+        }
+        
+        .navbar .menu li a:hover {
+            color: #821218; /* لون عند التمرير */
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #7a4c31;
+            color: #fff;
+            font-family: 'Aref Ruqaa', serif;
+        
+            
+        }
+        
+        .links-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em; /* تقليل الفجوة بين الأيقونات */
+            margin: 20px auto;
+            flex-wrap: wrap;
+        }
+        
+        .link-box {
+            width: 35px; /* عرض أصغر */
+            height: 35px; /* ارتفاع أصغر */
+            background-color: #7a4c31;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px; /* تقليل الزوايا */
+            text-decoration: none;
+            font-size: 0.6em; /* حجم نص أصغر */
+            font-family: 'Aref Ruqaa', serif;
+            transition: transform 0.2s;
+        }
+        
+        .link-box:hover {
+            transform: scale(1.1);
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Untitled-1.html">القائمة</a></li>
+                <li><a href="logIn.html"> تسجيل الدخول  </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1>قائمة الأطباق </h1>
+        </div>
+
+        <div class="menu-category">
+
+        </div>
+        <div class="menu-category">
+            <h2>السعودية</h2>
+            <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.49.50 PM.jpeg" alt="جريش">
+                <div class="menu-item-info">
+                    <h3>جريش</h3>
+                    <p>طبق تقليدي لذيذ مصنوع من القمح المطحون واللحم والتوابل.</p>
+                    <div class="menu-item-price">8.99JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('gresh', -1)">-</button> <span
+                        class="quantity-display" id="gresh-quantity">0</span> <button class="quantity-button"
+                        onclick="updateQuantity('gresh', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.49.59 PM.jpeg" alt="سليق">
+                <div class="menu-item-info">
+                    <h3>سليق</h3>
+                    <p>طبق سعودي تقليدي مكون من الأرز المسلوق بالدجاج أو اللحم مع التوابل.</p>
+                    <div class="menu-item-price">10.49JD</div>
+                </div>
+                <div class="item-quantity"> <button class="quantity-button"
+                        onclick="updateQuantity('saleeg', -1)">-</button> <span class="quantity-display"
+                        id="saleeg-quantity">0</span> <button class="quantity-button"
+                        onclick="updateQuantity('saleeg', 1)">+</button> </div>
+            </div>
+            <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.50.04 PM.jpeg" alt="كبسة">
+                <div class="menu-item-info">
+                    <h3>كبسة</h3>
+                    <p>طبق سعودي تقليدي مكون من الأرز واللحم مع التوابل والخضروات.</p>
+                    <div class="menu-item-price">12.99JD</div>
+                </div>
+                <div class="item-quantity"> <button class="quantity-button"
+                        onclick="updateQuantity('kabsa', -1)">-</button> <span class="quantity-display"
+                        id="kabsa-quantity">0</span> <button class="quantity-button"
+                        onclick="updateQuantity('kabsa', 1)">+</button> </div>
+            </div>
+
+
+            <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.50.30 PM.jpeg" alt="تمر بطحينية">
+                <div class="menu-item-info">
+                    <h3>تمر بطحينية</h3>
+                    <p>طبق تحلية لذيذ يتكون من التمر المخلوط مع الطحينية.</p>
+                    <div class="menu-item-price">4.99JD</div>
+                </div>
+                <div class="item-quantity"> <button class="quantity-button"
+                        onclick="updateQuantity('dates_tahini', -1)">-</button> <span class="quantity-display"
+                        id="dates_tahini-quantity">0</span> <button class="quantity-button"
+                        onclick="updateQuantity('dates_tahini', 1)">+</button> </div>
+            </div>
+            <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.50.37 PM.jpeg" alt="لقيمات">
+                <div class="menu-item-info">
+                    <h3>لقيمات</h3>
+                    <p>حلوى صغيرة مقلية تُقدم مع العسل أو الشيرة.</p>
+                    <div class="menu-item-price">5.49JD</div>
+                </div>
+                <div class="item-quantity"> <button class="quantity-button"
+                        onclick="updateQuantity('luqaimat', -1)">-</button> <span class="quantity-display"
+                        id="luqaimat-quantity">0</span> <button class="quantity-button"
+                        onclick="updateQuantity('luqaimat', 1)">+</button> </div>
+            </div>
+        </div>
+
+
+        <h2 id="r">العراق</h2>
+        <hr id="rw">
+        <div class="menu-item" id="r"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.43.40 PM.jpeg" alt="طبق المسكوف">
+            <div class="menu-item-info">
+                <h3>طبق المسكوف</h3>
+                <p>سمك مشوي بالطريقة العراقية التقليدية.</p>
+                <div class="menu-item-price">10.99JD</div>
+            </div>
+            <div class="item-quantity"> <button class="quantity-button"
+                    onclick="updateQuantity('masgouf', -1)">-</button> <span class="quantity-display"
+                    id="masgouf-quantity">0</span> <button class="quantity-button"
+                    onclick="updateQuantity('masgouf', 1)">+</button> </div>
+        </div>
+        <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.43.45 PM.jpeg" alt="دولمة">
+            <div class="menu-item-info">
+                <h3>دولمة</h3>
+                <p>أوراق عنب محشوة بالأرز واللحم والخضروات.</p>
+                <div class="menu-item-price">8.99JD</div>
+            </div>
+            <div class="item-quantity"> <button class="quantity-button" onclick="updateQuantity('dolma', -1)">-</button>
+                <span class="quantity-display" id="dolma-quantity">0</span> <button class="quantity-button"
+                    onclick="updateQuantity('dolma', 1)">+</button> </div>
+        </div>
+        <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.43.56 PM.jpeg" alt="مرقة الباميا">
+            <div class="menu-item-info">
+                <h3>مرقة الباميا</h3>
+                <p>طبق باميا مطبوخ باللحم والصلصة.</p>
+                <div class="menu-item-price">9.49JD</div>
+            </div>
+            <div class="item-quantity"> <button class="quantity-button" onclick="updateQuantity('bamya', -1)">-</button>
+                <span class="quantity-display" id="bamya-quantity">0</span> <button class="quantity-button"
+                    onclick="updateQuantity('bamya', 1)">+</button> </div>
+        </div>
+        <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.44.21 PM.jpeg" alt="قوزي">
+            <div class="menu-item-info">
+                <h3>قوزي</h3>
+                <p>لحم ضأن مشوي محشو بالأرز والمكسرات.</p>
+                <div class="menu-item-price">12.99JD</div>
+            </div>
+            <div class="item-quantity"> <button class="quantity-button" onclick="updateQuantity('quzi', -1)">-</button>
+                <span class="quantity-display" id="quzi-quantity">0</span> <button class="quantity-button"
+                    onclick="updateQuantity('quzi', 1)">+</button> </div>
+        </div>
+        <div class="menu-item"> <img src="Saudi_and_Iraq/WhatsApp Image 2024-12-26 at 5.46.56 PM.jpeg" alt="بقلاوة">
+            <div class="menu-item-info">
+                <h3>بقلاوة</h3>
+                <p>حلوى تقليدية محشوة بالمكسرات ومغطاة بالعسل.</p>
+                <div class="menu-item-price">5.99JD</div>
+            </div>
+            <div class="item-quantity"> <button class="quantity-button"
+                    onclick="updateQuantity('baklava', -1)">-</button> <span class="quantity-display"
+                    id="baklava-quantity">0</span> <button class="quantity-button"
+                    onclick="updateQuantity('baklava', 1)">+</button> </div>
+        </div>
+    </div>
+
+    <div class="total-price" id="totalPrice">Total: $0.00</div>
+
+    <a href="#" class="confirm-button">Confirm Order</a>
+    </div>
+    <div class="links-container">
+    
+        <a href="Untitled-1.html" class="link-box"> 1</a>
+    <a href="Untitled-2.html" class="link-box"> 2</a>
+    <a href="menu1.1.html" class="link-box"> 3</a>
+    <a href="menu2.2.html" class="link-box"> 4</a>
+    <a href="Saudi_and_Iraq.html" class="link-box"> 5</a>
+    <a href="Drinks.html" class="link-box"> 6</a>
+    </div>
+    </div>
+    <footer>
+    
+    جميع الحقوق محفوظة &copy; 2025 مطعم مائدة التُراث
+    <br>
+    اتصل بنا 0798654320
+    </footer>
+
+    <script> let total = 0;
+        const prices = { masgouf: 10.99, dolma: 8.99, bamya: 9.49, quzi: 12.99, baklava: 5.99, gresh: 8.99, saleeg: 10.49, kabsa: 12.99, dates_tahini: 4.99, luqaimat: 5.49 };
+        function updateQuantity(item, change) {
+            const quantityElement = document.getElementById(`${item}-quantity`);
+             let quantity = parseInt(quantityElement.textContent); 
+             quantity += change; 
+             if (quantity < 0) quantity = 0;
+            // منع الكميات السالبة 
+            quantityElement.textContent = quantity; updateTotal();
+        }
+        function updateTotal() {
+            total = 0; // حساب المجموع بناءً على الكميات 
+            total += parseInt(document.getElementById('masgouf-quantity').textContent) * prices.masgouf;
+            total += parseInt(document.getElementById('dolma-quantity').textContent) * prices.dolma;
+            total += parseInt(document.getElementById('bamya-quantity').textContent) * prices.bamya;
+            total += parseInt(document.getElementById('quzi-quantity').textContent) * prices.quzi;
+            total += parseInt(document.getElementById('baklava-quantity').textContent) * prices.baklava;
+            total += parseInt(document.getElementById('gresh-quantity').textContent) * prices.gresh;
+            total += parseInt(document.getElementById('saleeg-quantity').textContent) * prices.saleeg;
+            total += parseInt(document.getElementById('kabsa-quantity').textContent) * prices.kabsa;
+            total += parseInt(document.getElementById('dates_tahini-quantity').textContent) * prices.dates_tahini;
+            total += parseInt(document.getElementById('luqaimat-quantity').textContent) * prices.luqaimat;
+            document.getElementById('totalPrice').textContent = `المجموع: $${total.toFixed(2)}`;
+        } 
+    </script>
+</body>
+
+</html>

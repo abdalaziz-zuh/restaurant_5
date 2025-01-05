@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f1e3; /* لون خلفية فاتح ودافئ */
+            color: #4b4b4b; /* نص داكن لراحة العين */
+        }
+        
+        .menu-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .menu-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .menu-header h1 {
+            font-size: 2.5em;
+            color: #9e2a2f; /* أحمر عتيق */
+        }
+        
+        .menu-category h2 {
+            font-size: 1.8em;
+            color: #7a4c31; /* بني تراثي */
+            border-bottom: 2px solid #9e2a2f; /* أحمر عتيق */
+            padding-bottom: 5px;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #7a4c31; /* بني تراثي */
+            border-radius: 5px;
+            background-color: #fff7e6; /* لون خلفية دافئ */
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .menu-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(154, 42, 47, 0.3); 
+        }
+        
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .menu-item-info h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #7a4c31; 
+        }
+        
+        .menu-item-info p {
+            margin: 5px 0;
+            color: #4b4b4b; 
+        }
+        
+        .menu-item-price {
+            font-size: 1.1em;
+            color: #9e2a2f; 
+            font-weight: bold;
+        }
+        
+        .item-quantity {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        
+        .quantity-button {
+            background-color: #9e2a2f; 
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            margin: 0 5px;
+        }
+        
+        .quantity-button:hover {
+            background-color: #7a4c31; 
+        }
+        
+        .quantity-display {
+            font-size: 1.1em;
+            color: #4b4b4b;
+        }
+        
+        .total-price {
+            text-align: center;
+            font-size: 1.5em;
+            color: #9e2a2f; 
+            margin-top: 20px;
+        }
+        
+        .confirm-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #7a4c31; 
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        
+        .confirm-button:hover {
+            background-color: #9e2a2f; 
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 1em 2em;
+            background-color: #7a4c31; 
+        }
+        
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            gap: 2em; 
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar .menu li a {
+            text-decoration: none;
+            color: beige; 
+            font-family: 'Aref Ruqaa', serif; 
+            font-size: 1.2em; 
+            transition: color 0.3s; 
+        }
+        
+        .navbar .menu li a:hover {
+            color: #821218; 
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #7a4c31;
+            color: #fff;
+            font-family: 'Aref Ruqaa', serif;
+        
+            
+        }
+        
+        .links-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            margin: 20px auto;
+            flex-wrap: wrap;
+        }
+        
+        .link-box {
+            width: 35px; 
+            height: 35px; 
+            background-color: #7a4c31;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px; 
+            text-decoration: none;
+            font-size: 0.6em; 
+            font-family: 'Aref Ruqaa', serif;
+            transition: transform 0.2s;
+        }
+        
+        .link-box:hover {
+            transform: scale(1.1);
+        }
+        
+        .total-price {
+            text-align: center;
+            font-size: 1.5em;
+            color: #9e2a2f; 
+            margin-top: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Untitled-1.html">القائمة</a></li>
+                <li><a href="logIn.html"> تسجيل الدخول  </a></li>
+            </ul>
+        </nav>
+      
+        
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1>قائمة المشروبات</h1>
+        </div>
+
+        <div class="menu-category">
+            <h2>مشروبات</h2>
+            <div class="menu-item">
+                <img src="Saudi_and_Iraq/Gemini_Generated_Image_yk8peyyk8peyyk8p.jpg" alt="قهوة سعودية">
+                <div class="menu-item-info">
+                    <h3>قهوة سعودية</h3>
+                    <p>قهوة عربية تقليدية مع الهيل والزعفران.</p>
+                    <div class="menu-item-price">3 JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('qahwa', -1)">-</button>
+                    <span class="quantity-display" id="qahwa-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('qahwa', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Saudi_and_Iraq/Gemini_Generated_Image_27r7oy27r7oy27r7.jpg" alt="سحلب">
+                <div class="menu-item-info">
+                    <h3>سحلب</h3>
+                    <p>مشروب ساخن مع الحليب وماء الورد والجوز.</p>
+                    <div class="menu-item-price">2 JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('sahlab', -1)">-</button>
+                    <span class="quantity-display" id="sahlab-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('sahlab', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Saudi_and_Iraq/Gemini_Generated_Image_kvq8cmkvq8cmkvq8.jpg" alt="عصير موز بالمكسرات">
+                <div class="menu-item-info">
+                    <h3>عصير موز بالمكسرات</h3>
+                    <p>عصير لذيذ مع الموز والمكسرات.</p>
+                    <div class="menu-item-price">3 JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('banana_juice', -1)">-</button>
+                    <span class="quantity-display" id="banana_juice-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('banana_juice', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Saudi_and_Iraq/Gemini_Generated_Image_45pncj45pncj45pn.jpg" alt="كوكتيل افوكادو">
+                <div class="menu-item-info">
+                    <h3>كوكتيل افوكادو</h3>
+                    <p>كوكتيل مغذي ومنعش مع الافوكادو.</p>
+                    <div class="menu-item-price">4 JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('avocado_cocktail', -1)">-</button>
+                    <span class="quantity-display" id="avocado_cocktail-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('avocado_cocktail', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Saudi_and_Iraq/Gemini_Generated_Image_spu4jtspu4jtspu4.jpg" alt="كوكتيل فراولة">
+                <div class="menu-item-info">
+                    <h3>كوكتيل فراولة</h3>
+                    <p>كوكتيل منعش مع الفراولة الطازجة.</p>
+                    <div class="menu-item-price">4 JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('strawberry_cocktail', -1)">-</button>
+                    <span class="quantity-display" id="strawberry_cocktail-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('strawberry_cocktail', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="Saudi_and_Iraq/Gemini_Generated_Image_e5ex94e5ex94e5ex.jpg" alt="عصير رمان">
+                <div class="menu-item-info">
+                    <h3>عصير رمان</h3>
+                    <p>عصير منعش مع الرمان الطازج.</p>
+                    <div class="menu-item-price">3 JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('pomegranate_juice', -1)">-</button>
+                    <span class="quantity-display" id="pomegranate_juice-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('pomegranate_juice', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="total-price"id="totalPrice" >Total: $0.00</div>
+    
+    <a href="#" class="confirm-button" >Confirm Order</a>
+
+</div>
+
+<div class="links-container">
+    
+    <a href="Untitled-1.html" class="link-box"> 1</a>
+    <a href="Untitled-2.html" class="link-box"> 2</a>
+    <a href="menu1.1.html" class="link-box"> 3</a>
+    <a href="menu2.2.html" class="link-box"> 4</a>
+    <a href="Saudi_and_Iraq.html" class="link-box"> 5</a>
+    <a href="Drinks.html" class="link-box"> 6</a>
+</div>
+</div>
+<footer>
+
+جميع الحقوق محفوظة &copy; 2025 مطعم مائدة التُراث
+<br>
+اتصل بنا 0798654320
+</footer>
+
+<script>
+    // تعريف أسعار العناصر
+    const prices = {
+        qahwa: 3,
+        sahlab: 2,
+        banana_juice: 3,
+        avocado_cocktail: 4,
+        strawberry_cocktail: 4,
+        pomegranate_juice: 3
+    };
+
+    // تحديث الكمية عند الضغط على الزر
+    function updateQuantity(item, change) {
+        const quantityElement = document.getElementById(`${item}-quantity`);
+        let quantity = parseInt(quantityElement.textContent);
+
+        quantity += change;
+        if (quantity < 0) quantity = 0; // منع الكميات السالبة
+
+        quantityElement.textContent = quantity;
+
+        // استدعاء تحديث الإجمالي
+        updateTotal();
+    }
+
+    // تحديث الإجمالي
+    function updateTotal() {
+        let total = 0;
+
+        // حساب الإجمالي بناءً على الكميات والأسعار
+        total += parseInt(document.getElementById('qahwa-quantity').textContent) * prices.qahwa;
+        total += parseInt(document.getElementById('sahlab-quantity').textContent) * prices.sahlab;
+        total += parseInt(document.getElementById('banana_juice-quantity').textContent) * prices.banana_juice;
+        total += parseInt(document.getElementById('avocado_cocktail-quantity').textContent) * prices.avocado_cocktail;
+        total += parseInt(document.getElementById('strawberry_cocktail-quantity').textContent) * prices.strawberry_cocktail;
+        total += parseInt(document.getElementById('pomegranate_juice-quantity').textContent) * prices.pomegranate_juice;
+
+        // تحديث العنصر النصي الخاص بالمجموع
+        document.getElementById('totalPrice').textContent = `المجموع: $${total.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>

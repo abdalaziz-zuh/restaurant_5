@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu2.2.css">
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Untitled-1.html">القائمة</a></li>
+                <li><a href="logIn.html"> تسجيل الدخول  </a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1>قائمة الأطباق</h1>
+        </div>
+
+        <div class="menu-category">
+            <h2>اليمن</h2>
+            <div class="menu-item">
+                <img src="image/اليمن مندي.jpeg" alt="مندي">
+                <div class="menu-item-info">
+                    <h3>مندي</h3>
+                  <p>يطهى لحم الضأن مع الأرز والبهارات تحت الأرض، مما يعطيه نكهة خاصة.</p>
+                    <div class="menu-item-price">2.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('مندي', -1)">-</button>
+                    <span class="quantity-display" id="مندي-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('مندي', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="image/اليمن لحسة.jpeg" alt="لحسة">
+                <div class="menu-item-info">
+                    <h3>لحسة</h3>
+             <p>تتكون من المرق مع اللحم مع إضافة الخضروات مثل البطاطا والطماطم. </p>
+                    <div class="menu-item-price">7.00JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('لحسة', -1)">-</button>
+                    <span class="quantity-display" id="لحسة-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('لحسة', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/اليمن زربيان.jpeg" alt="زربيان">
+                <div class="menu-item-info">
+                    <h3>زربيان</h3>
+                    <p>يُعد بشكل رئيسي من الأرز مع اللحم   </p>
+                    <div class="menu-item-price">5.00JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('زربيان', -1)">-</button>
+                    <span class="quantity-display" id="زربيان-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('زربيان', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/اليمن العصيد.jpeg"alt="العصيد">
+                <div class="menu-item-info">
+                    <h3>العصيد</h3>
+                   <p>  يتكون من دقيق الذرة المطحون ناعماً ويُطبخ بالماء حتى يصبح سميكاً. يقدم  ساخناً مع السمن والعسل.</p>
+                    <div class="menu-item-price">5.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('العصيد', -1)">-</button>
+                    <span class="quantity-display" id="العصيد-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('العصيد', 1)">+</button>
+                </div>
+            </div>
+
+
+
+            <div class="menu-item">
+                <img src="image/حلويات اليمن بنت الصحن.jpeg" alt="بنت الصحن">
+                <div class="menu-item-info">
+                    <h3>بنت الصحن</h3>
+                    <p>يُحضّر من الدقيق، السمن أو الزبدة، والملح و السكر و السمسم و الماء</p>
+                    <div class="menu-item-price">2.00JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('بنت_الصحن', -1)">-</button>
+                    <span class="quantity-display" id="بنت_الصحن-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('بنت_الصحن', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>عُمان</h2>
+            <div class="menu-item">
+                <img src="image/عمان الشواء.jpeg" alt="الشواء">
+                <div class="menu-item-info">
+                    <h3>الشواء</h3>
+                    <p> لحم متبل يُلف بأوراق الموز ويُطهى ببطء في فرن رملي تحت الأرض</p>
+                    <div class="menu-item-price">3.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('الشواء', -1)">-</button>
+                    <span class="quantity-display" id="الشواء-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('الشواء', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/عمان المشوي.jpeg" alt="المشوي">
+                <div class="menu-item-info">
+                    <h3>المشوي</h3>
+                    <p> سمك الكنعد المشوي على السيخ ويُقدم مع الأرز وصلصة الليمون المنعشة.</p>
+                    <div class="menu-item-price">4.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('المشوي', -1)">-</button>
+                    <span class="quantity-display" id="المشوي-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('المشوي', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="image/عمان المكبوس.jpeg" alt="المكبوس">
+                <div class="menu-item-info">
+                    <h3>المكبوس</h3>
+                    <p> طبق أرز متبل يُطهى مع اللحم ومزيج من البهارات العمانية</p>
+                    <div class="menu-item-price">4.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('المكبوس', -1)">-</button>
+                    <span class="quantity-display" id="المكبوس-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('المكبوس', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/عمان الهريس.jpeg"alt="الهريس">
+                <div class="menu-item-info">
+                    <h3>الهريس</h3>
+                    <p>طبق  مصنوع من القمح واللحم، يُطهى حتى يصبح ناعمًا</p>
+                    <div class="menu-item-price">4.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('الهريس', -1)">-</button>
+                    <span class="quantity-display" id="الهريس-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('الهريس', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/عمان حلوى.jpeg" alt="حلوى">
+                <div class="menu-item-info">
+                    <h3>حلوى</h3>
+                 <p>حلوى جيلاتينية غنية بالنكهات مثل ماء الورد والزعفران والهيل، تُزين بالمكسرات</p>
+                    <div class="menu-item-price">2.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('حلوى', -1)">-</button>
+                    <span class="quantity-display" id="حلوى-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('حلوى', 1)">+</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="total-price" id="totalPrice">Total: 0.00</div>
+
+        <a href="#" class="confirm-button">Confirm Order</a>
+    </div>
+
+    <div class="links-container">
+        <a href="Untitled-1.html" class="link-box"> 1</a>
+        <a href="Untitled-2.html"class="link-box"> 2</a>
+        <a href="menu1.1.html" class="link-box"> 3</a>
+        <a href="menu2.2.html" class="link-box"> 4</a>
+        <a href="Saudi_and_Iraq.html" class="link-box"> 5</a>
+        <a href="Drinks.html" class="link-box"> 6</a>
+    </div>
+</div>
+<footer>
+  
+    جميع الحقوق محفوظة &copy; 2025 مطعم مائدة التُراث
+    <br>
+    اتصل بنا 0798654320
+  </footer>
+
+    <script>
+        let total = 0;
+        const prices = {
+            مندي: 2.50,
+            لحسة: 7.00,
+            زربيان: 5.00,
+            العصيد: 5.50,
+            بنت_الصحن :2.00,
+            الشواء: 3.50,
+            المشوي:4.50,
+            المكبوس: 4.50,
+            الهريس: 4.50,
+            حلوى: 2.50
+
+        };
+
+        function updateQuantity(item, change) {
+            const quantityElement = document.getElementById(`${item}-quantity`);
+            let quantity = parseInt(quantityElement.textContent);
+
+            quantity += change;
+            if (quantity < 0) quantity = 0; // منع الكميات السالبة
+
+            quantityElement.textContent = quantity;
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            total = 0;
+
+            // حساب المجموع بناءً على الكميات
+            total += parseInt(document.getElementById('مندي-quantity').textContent) * prices.مندي;
+            total += parseInt(document.getElementById('لحسة-quantity').textContent) * prices.لحسة;
+            total += parseInt(document.getElementById('زربيان-quantity').textContent) * prices.زربيان;
+            total += parseInt(document.getElementById('العصيد-quantity').textContent) * prices.العصيد;
+            total += parseInt(document.getElementById('بنت_الصحن-quantity').textContent) * prices.بنت_الصحن;
+
+
+            total += parseInt(document.getElementById('الشواء-quantity').textContent) * prices.الشواء;
+            total += parseInt(document.getElementById('المشوي-quantity').textContent) * prices.المشوي;
+            total += parseInt(document.getElementById('المكبوس-quantity').textContent) * prices.المكبوس;
+            total += parseInt(document.getElementById('الهريس-quantity').textContent) * prices.الهريس;
+            total += parseInt(document.getElementById('حلوى-quantity').textContent) * prices.حلوى;
+
+
+            document.getElementById('totalPrice').textContent = `Total: ${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f1e3;
+    color: #4b4b4b;
+}
+
+.menu-container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-header h1 {
+    font-size: 2.8em;
+    color: #9e2a2f;
+}
+
+.menu-header p {
+    font-size: 1.2em;
+    color: #7a4c31;
+}
+
+.menu-item {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid #7a4c31;
+    border-radius: 8px;
+    background-color: #fff7e6;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(154, 42, 47, 0.3);
+}
+
+.menu-item h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #7a4c31;
+}
+
+.rating {
+    display: flex;
+    gap: 15px; /* زيادة المسافة بين النجوم */
+    font-size: 2.5em; /* زيادة حجم النجوم */
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2.5em; /* زيادة حجم النجوم */
+    color: #f1c40f;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 5px; /* إضافة مساحة حول النجوم لجعل المربع أكبر */
+    border: 2px solid transparent; /* إضافة حد شفاف لتحديد مساحة أكبر حول النجوم */
+    border-radius: 8px; /* جعل الحواف دائرية */
+}
+
+.rating label:hover {
+    color: #e67e22;
+    background-color: #f5f1e3; /* خلفية عند التمرير على النجمة */
+}
+
+.rating input:checked ~ label {
+    color: #e67e22; /* عندما يتم تحديد النجمة */
+}
+
+.rating label:active {
+    transform: scale(1.2); /* تكبير النجمة عند الضغط */
+}
+
+textarea {
+    font-size: 1.1em;
+    width: 100%;
+    padding: 8px; /* تقليل المسافة داخل مربع الملاحظات */
+    border-radius: 8px;
+    border: 2px solid #7a4c31;
+    background-color: #fff7e6;
+    margin-top: 15px;
+    min-height: 80px; /* تصغير ارتفاع المربع */
+    resize: vertical; /* السماح بتغيير الحجم بشكل عمودي */
+}
+
+.confirm-button {
+    display: block;
+    width: 250px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 12px;
+    background-color: #7a4c31;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.4em;
+    transition: background-color 0.3s;
+}
+
+.confirm-button:hover {
+    background-color: #9e2a2f;
+}
+
+button[type="submit"] {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.4em;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #9e2a2f;
+    border-radius: 5px;
+}

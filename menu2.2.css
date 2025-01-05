@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f1e3; /* لون خلفية فاتح ودافئ */
+    color: #4b4b4b; /* نص داكن لراحة العين */
+}
+
+.menu-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-header h1 {
+    font-size: 2.5em;
+    color: #9e2a2f; /* أحمر عتيق */
+}
+
+.menu-category h2 {
+    font-size: 1.8em;
+    color: #7a4c31; /* بني تراثي */
+    border-bottom: 2px solid #9e2a2f; /* أحمر عتيق */
+    padding-bottom: 5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #7a4c31; /* بني تراثي */
+    border-radius: 5px;
+    background-color: #fff7e6; /* لون خلفية دافئ */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(154, 42, 47, 0.3); /* ظل أحمر عتيق */
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.menu-item-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #7a4c31; /* بني تراثي */
+}
+
+.menu-item-info p {
+    margin: 5px 0;
+    color: #4b4b4b; /* نص داكن */
+}
+
+.menu-item-price {
+    font-size: 1.1em;
+    color: #9e2a2f; /* أحمر عتيق */
+    font-weight: bold;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.quantity-button {
+    background-color: #9e2a2f; /* أحمر عتيق */
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 0 5px;
+}
+
+.quantity-button:hover {
+    background-color: #7a4c31; /* بني تراثي */
+}
+
+.quantity-display {
+    font-size: 1.1em;
+    color: #4b4b4b;
+}
+
+.total-price {
+    text-align: center;
+    font-size: 1.5em;
+    color: #9e2a2f; /* أحمر عتيق */
+    margin-top: 20px;
+}
+
+.confirm-button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #7a4c31; /* بني تراثي */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.confirm-button:hover {
+    background-color: #9e2a2f; /* أحمر عتيق */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* لتوسيط القائمة */
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #7a4c31; /* لون صلب بدون شفافية */
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 2em; /* مسافة بين العناصر */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar .menu li a {
+    text-decoration: none;
+    color: beige; /* تغيير لون النص */
+    font-family: 'Aref Ruqaa', serif; /* تغيير نوع الخط */
+    font-size: 1.2em; /* تكبير حجم الخط */
+    transition: color 0.3s; /* تأثير عند التمرير */
+}
+
+.navbar .menu li a:hover {
+    color: #821218; /* لون عند التمرير */
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #7a4c31;
+    color: #fff;
+    font-family: 'Aref Ruqaa', serif;
+
+    
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em; /* تقليل الفجوة بين الأيقونات */
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+.link-box {
+    width: 35px; /* عرض أصغر */
+    height: 35px; /* ارتفاع أصغر */
+    background-color: #7a4c31;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px; /* تقليل الزوايا */
+    text-decoration: none;
+    font-size: 0.6em; /* حجم نص أصغر */
+    font-family: 'Aref Ruqaa', serif;
+    transition: transform 0.2s;
+}
+
+.link-box:hover {
+    transform: scale(1.1);
+}

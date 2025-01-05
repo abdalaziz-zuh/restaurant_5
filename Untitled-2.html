@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="Edit/Untitled-3.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Untitled-1.html">القائمة</a></li>
+                <li><a href="logIn.html"> تسجيل الدخول  </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1>قائمة الأطباق</h1>
+        </div>
+
+        <div class="menu-category">
+            <h2>سوريا</h2>
+            <div class="menu-item">
+                <img src="image/يبرق.webp" alt="يبرق">
+                <div class="menu-item-info">
+                    <h3>يبرق</h3>
+                    <p>اليبرق:ورق عنب و ارز ولحم مفروم والبصل المفروم والتوابل</p>
+                    <div class="menu-item-price">7JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('يبرق', -1)">-</button>
+                    <span class="quantity-display" id="يبرق">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('يبرق', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/كبة.webp" alt="كبة">
+                <div class="menu-item-info">
+                    <h3>كبة</h3>
+                    <p>الكبة:برغل ناعم ولحم مفروم</p>
+                    <div class="menu-item-price">4JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('كبة', -1)">-</button>
+                    <span class="quantity-display" id="كبة">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('كبة', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/شاكرية.webp" alt="شاكرية">
+                <div class="menu-item-info">
+                    <h3>شاكرية</h3>
+                    <p>الشاكرية:لحم أو دجاج و لبن زبادي وثوم مهروس وملح وبهارات وأرز مسلوق للتقديم.</p>
+                    <div class="menu-item-price">6JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('شاكرية', -1)">-</button>
+                    <span class="quantity-display" id="شاكرية">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('شاكرية', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/فتوش.webp" alt="فتوش">
+                <div class="menu-item-info">
+                    <h3>فتوش</h3>
+                    <p>لالفتوش: خبز مقلي أو محمص و خضروات (خس، طماطم، خيار، بصل، بقدونس، نعناع) ودبس رمان وزيت زيتون وليمون.</p>
+                    <div class="menu-item-price">3JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('فتوش', -1)">-</button>
+                    <span class="quantity-display" id="فتوش">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('فتوش', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/بقلاوة.webp" alt="بقلاوة">
+                <div class="menu-item-info">
+                    <h3>بقلاوة</h3>
+                    <p>لبقلاوة هي حلوى مصنوعة من طبقات رقيقة من عجينة الفيلو، محشوة بالمكسرات (عادة الفستق أو الجوز) ومزينة بالقطر.</p>
+                    <div class="menu-item-price">5JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('بقلاوة', -1)">-</button>
+                    <span class="quantity-display" id="بقلاوة">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('بقلاوة', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>لبنان</h2>
+            <div class="menu-item">
+                <img src="image/شورما.webp" alt="شورما">
+                <div class="menu-item-info">
+                    <h3>شورما</h3>
+                    <p>شورما:لحم أو دجاج شرائح و توابل الشاورما و خبز الشاورما</p>
+                    <div class="menu-item-price">3JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('شورما', -1)">-</button>
+                    <span class="quantity-display" id="شورما">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('شورما', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/سمبوسة.webp" alt="سمبوسة">
+                <div class="menu-item-info">
+                    <h3>سمبوسة</h3>
+                    <p>عجينة السمبوسة و الحشوة(لحم مفروم او خضروات او جبن)</p>
+                    <div class="menu-item-price">4JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('سمبوسة', -1)">-</button>
+                    <span class="quantity-display" id="سمبوسة">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('سمبوسة', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/تبولة.webp" alt="تبولة">
+                <div class="menu-item-info">
+                    <h3>تبولة</h3>
+                    <p>تبولة:برغل ناعم و خضروات مفرومة(البقدونس والطماطم والبصل الاخضر او الاحمر) و عصير الليمون وزيت الزيتون</p>
+                    <div class="menu-item-price">3JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('تبولة', -1)">-</button>
+                    <span class="quantity-display" id="تبولة">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('تبولة', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/حلاوة الجبن.webp" alt="حلاوة الجبن">
+                <div class="menu-item-info">
+                    <h3>حلاوة الجبن</h3>
+                    <p>حلاوة الجبن هي حلوى سورية مشهورة مصنوعة من عجينة الجبن والسكر، محشوة بالقشطة ومزينة بالفستق الحلبي وماء الزهر أو ماء الورد</p>
+                    <div class="menu-item-price">4JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('حلاوة الجبن', -1)">-</button>
+                    <span class="quantity-display" id="حلاوة الجبن">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('حلاوة الجبن', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="total-price" id="totalPrice">Total: 0.00 JD</div>
+
+        <a href="#" class="confirm-button">Confirm Order</a>
+    </div>
+    <div class="links-container">
+        <a href="Untitled-1.html" class="link-box"> 1</a>
+    <a href="Untitled-2.html"class="link-box"> 2</a>
+    <a href="menu1.1.html" class="link-box"> 3</a>
+    <a href="menu2.2.html" class="link-box"> 4</a>
+    <a href="Saudi_and_Iraq.html" class="link-box"> 5</a>
+    <a href="Drinks.html" class="link-box"> 6</a>
+    </div>
+</div>
+<footer>
+  
+    جميع الحقوق محفوظة &copy; 2025 مطعم مائدة التُراث
+    <br>
+    اتصل بنا 0798654320
+  </footer>
+    <script src="Untitled-3.js"></script> <!-- ربط ملف JavaScript -->
+</body>
+</html>

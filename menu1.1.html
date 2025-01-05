@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="menu1.1.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Untitled-1.html">القائمة</a></li>
+                <li><a href="logIn.html"> تسجيل الدخول  </a></li>
+            </ul>
+        </nav>
+      
+        
+    </header>
+
+
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1>قائمة الأطباق</h1>
+        </div>
+
+        <div class="menu-category">
+            <h2>مصر</h2>
+            <div class="menu-item">
+                <img src="image/مصر كشري.jpeg" alt="كشري">
+                <div class="menu-item-info">
+                    <h3>كشري</h3>
+                    <p>يتكون من طبقات من الأرز والعدس والمعكرونة والحمص، ويُغطى بصلصة طماطم حارة وبصل مقلي مقرمش.</p>
+                    <div class="menu-item-price">2.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('كشري', -1)">-</button>
+                    <span class="quantity-display" id="كشري-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('كشري', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="image/مصر ملوخية.jpeg" alt="ملوخية">
+                <div class="menu-item-info">
+                    <h3>ملوخية</h3>
+                    <p>حساء أخضر مصنوع من أوراق الملوخية المطهية مع الثوم والكزبرة،  يُقدم مع الأرز واللحم.</p>
+                    <div class="menu-item-price">7.00JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('ملوخية', -1)">-</button>
+                    <span class="quantity-display" id="ملوخية-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('ملوخية', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/مصر محشي.jpeg" alt="محشي">
+                <div class="menu-item-info">
+                    <h3>محشي</h3>
+                    <p>خضروات مثل الكوسا والفلفل والباذنجان وأوراق العنب محشوة بخليط من الأرز المتبل وتُطهى في صلصة الطماطم</p>
+                    <div class="menu-item-price">5.00JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('محشي', -1)">-</button>
+                    <span class="quantity-display" id="محشي-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('محشي', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/مصر فتة.jpeg" alt="فتة">
+                <div class="menu-item-info">
+                    <h3>فتة</h3>
+                   <p>طبق مكون من طبقات من الأرز والخبز المقلي واللحم، ويُسكب عليه صلصة الخل بالثوم وصلصة الطماطم.</p>
+                    <div class="menu-item-price">5.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('فتة', -1)">-</button>
+                    <span class="quantity-display" id="فتة-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('فتة', 1)">+</button>
+                </div>
+            </div>
+
+
+
+            <div class="menu-item">
+                <img src="image/مصر بسبوسة.jpeg" alt="بسبوسة">
+                <div class="menu-item-info">
+                    <h3>بسبوسة</h3>
+                    <p>كعكة مصنوعة من السميد تُسقى بالقطر الحلو، تُزين باللوز</p>
+                    <div class="menu-item-price">2.00JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('بسبوسة', -1)">-</button>
+                    <span class="quantity-display" id="بسبوسة-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('بسبوسة', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>المغرب</h2>
+            <div class="menu-item">
+                <img src="image/حريرة المغرب.jpeg" alt="حريرة">
+                <div class="menu-item-info">
+                    <h3>حريرة</h3>
+                    <p> الطماطم: تعتبر مكونًا أساسيًا، حيث توفر الطعم الحامض واللذيذ و العدس والحمص و اللحم و البصل و الدقيق</p>
+                    <div class="menu-item-price">3.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('حريرة', -1)">-</button>
+                    <span class="quantity-display" id="حريرة-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('حريرة', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/المروزية المغرب.jpeg" alt="المروزية">
+                <div class="menu-item-info">
+                    <h3>المروزية</h3>
+                    <p> مكونة من اللحم و السمن البلدي و مجموعة من التوابل و المكسرات</p>
+                    <div class="menu-item-price">4.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('المروزية', -1)">-</button>
+                    <span class="quantity-display" id="المروزية-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('المروزية', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="image/الطاجين المغرب.jpeg" alt="الطاجين">
+                <div class="menu-item-info">
+                    <h3>الطاجين</h3>
+                    <p> يتم تحضيره باللحوم والدجاج، والسمك، والخضروات</p>
+                    <div class="menu-item-price">4.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('الطاجين', -1)">-</button>
+                    <span class="quantity-display" id="الطاجين-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('الطاجين', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/الرفيسة المغرب.jpeg" alt="الرفيسة">
+                <div class="menu-item-info">
+                    <h3>الرفيسة</h3>
+                    <p>يتكون طبق الرفيسة عادة من مكونات رئيسية مثل: اللحم </p>
+                    <div class="menu-item-price">4.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('الرفيسة', -1)">-</button>
+                    <span class="quantity-display" id="الرفيسة-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('الرفيسة', 1)">+</button>
+                </div>
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/البسطلية المغرب حلويات.jpeg" alt="البسطلية">
+                <div class="menu-item-info">
+                    <h3>البسطلية</h3>
+                 <p>تكون من عجينة رقيقة محشوة بالدجاج أو اللحم المفروم، واللوز، والسكر، والقرفة.</p>
+                    <div class="menu-item-price">2.50JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('البسطلية', -1)">-</button>
+                    <span class="quantity-display" id="البسطلية-quantity">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('البسطلية', 1)">+</button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="total-price" id="totalPrice">Total: 0.00</div>
+
+        <a href="#" class="confirm-button">Confirm Order</a>
+
+        <div class="links-container">
+            <a href="Untitled-1.html" class="link-box"> 1</a>
+    <a href="Untitled-2.html" class="link-box"> 2</a>
+    <a href="menu1.1.html" class="link-box"> 3</a>
+    <a href="menu2.2.html" class="link-box"> 4</a>
+    <a href="Saudi_and_Iraq.html" class="link-box"> 5</a>
+    <a href="Drinks.html" class="link-box"> 6</a>
+        </div>
+    </div>
+    <footer>
+      
+        جميع الحقوق محفوظة &copy; 2025 مطعم مائدة التُراث
+        <br>
+        اتصل بنا 0798654320
+      </footer>
+    <script>
+        let total = 0;
+        const prices = {
+            كشري: 2.50,
+            ملوخية: 7.00,
+            محشي: 5.00,
+            فتة: 5.50,
+            بسبوسة:2.00,
+            حريرة: 3.50,
+            المروزية:4.50,
+            الطاجين: 4.50,
+            الرفيسة: 4.50,
+            البسطلية: 2.50
+
+        };
+
+        function updateQuantity(item, change) {
+            const quantityElement = document.getElementById(`${item}-quantity`);
+            let quantity = parseInt(quantityElement.textContent);
+
+            quantity += change;
+            if (quantity < 0) quantity = 0; // منع الكميات السالبة
+
+            quantityElement.textContent = quantity;
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            total = 0;
+
+            // حساب المجموع بناءً على الكميات
+            total += parseInt(document.getElementById('كشري-quantity').textContent) * prices.كشري;
+            total += parseInt(document.getElementById('ملوخية-quantity').textContent) * prices.ملوخية;
+            total += parseInt(document.getElementById('محشي-quantity').textContent) * prices.محشي;
+            total += parseInt(document.getElementById('فتة-quantity').textContent) * prices.فتة;
+            total += parseInt(document.getElementById('بسبوسة-quantity').textContent) * prices.بسبوسة;
+
+
+            total += parseInt(document.getElementById('حريرة-quantity').textContent) * prices.حريرة;
+            total += parseInt(document.getElementById('المروزية-quantity').textContent) * prices.المروزية;
+            total += parseInt(document.getElementById('الطاجين-quantity').textContent) * prices.الطاجين;
+            total += parseInt(document.getElementById('الرفيسة-quantity').textContent) * prices.الرفيسة;
+            total += parseInt(document.getElementById('البسطلية-quantity').textContent) * prices.البسطلية;
+
+
+            document.getElementById('totalPrice').textContent = `Total: ${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

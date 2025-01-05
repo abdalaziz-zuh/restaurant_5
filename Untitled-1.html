@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <link rel="stylesheet" href="Edit/Untitled-2.css"> <!-- ربط ملف CSS -->
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <ul class="menu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="Untitled-1.html">القائمة</a></li>
+                <li><a href="logIn.html"> تسجيل الدخول  </a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-container">
+        <div class="menu-header">
+            <h1>قائمة الأطباق</h1>
+        </div>
+
+        <div class="menu-category">
+            <h2>الأردن</h2>
+            <div class="menu-item">
+                <img src="image/منسف.jpg" alt="منسف">
+                <div class="menu-item-info">
+                    <h3>منسف</h3>
+                    <p>المنسف: الطبق الوطني في الأردن...</p>
+                    <div class="menu-item-price">8JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('منسف', -1)">-</button>
+                    <span class="quantity-display" id="منسف">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('منسف', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/مسخن.jpg" alt="مسخن">
+                <div class="menu-item-info">
+                    <h3>مسخن</h3>
+                    <p>المسخن: دجاج متبل بالسماق...</p>
+                    <div class="menu-item-price">6JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('مسخن', -1)">-</button>
+                    <span class="quantity-display" id="مسخن">0</span>
+                    <button class="quantity-button" onclick="updateQuantity('مسخن', 1)">+</button>
+                </div>
+            </div>
+
+            <!-- إضافة عنصر كفتة بالطحينية -->
+            <div class="menu-item">
+                <img src="image/كفتة بالطحينية.jpg" alt="كفتة بالطحينية ">
+                <div class="menu-item-info">
+                    <h3>كفتة بالطحينية</h3>
+                    <p>كفتة لحم مشوية مع صلصة الطحينية اللذيذة.</p>
+                    <div class="menu-item-price">4JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('كفتة', -1)">-</button>
+                    <span class="quantity-display" id="كفتة">0</span> <!-- ID هو "كفتة" -->
+                    <button class="quantity-button" onclick="updateQuantity('كفتة', 1)">+</button>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="image/كنافة.jpg" alt="كنافة">
+                <div class="menu-item-info">
+                    <h3>كنافة</h3>
+                    <p>الكنافة: حلوى مكونة من عجينة الشعرية المحشوة بالجبنة، تُسقى بالقطر وتُزين بالفستق المطحون.</p>
+                    <div class="menu-item-price">1JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('كنافة', -1)">-</button>
+                    <span class="quantity-display" id="كنافة">0</span> <!-- ID هو "كنافة" -->
+                    <button class="quantity-button" onclick="updateQuantity('كنافة', 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>فلسطين</h2>
+            <div class="menu-item">
+                <img src="image/مقلوبة.jpg" alt="مقلوبة">
+                <div class="menu-item-info">
+                    <h3>مقلوبة</h3>
+                    <p>المقلوبة : ارز مع دجاج او لحمة وتوابل وبعض انواع الخضار والمكسرات</p>
+                    <div class="menu-item-price">4JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('مقلوبة', -1)">-</button>
+                    <span class="quantity-display" id="مقلوبة">0</span> <!-- ID هو "مقلوبة" -->
+                    <button class="quantity-button" onclick="updateQuantity('مقلوبة', 1)">+</button>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <img src="image/مفتول.jpg" alt="مفتول">
+                <div class="menu-item-info">
+                    <h3>مفتول</h3>
+                    <p>المفتول:المكون الاساسي السميد والدجاج , اليخني صلصة الطماطم مع بعض الخضراوات والحمص</p>
+                    <div class="menu-item-price">5JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('مفتول', -1)">-</button>
+                    <span class="quantity-display" id="مفتول">0</span> <!-- ID هو "مفتول" -->
+                    <button class="quantity-button" onclick="updateQuantity('مفتول', 1)">+</button>
+                </div>
+                
+            </div>
+
+            <div class="menu-item">
+                <img src="image/فتة.jpg" alt="فتة">
+                <div class="menu-item-info">
+                    <h3>فتة</h3>
+                    <p>الفتة: خبز محمص او مقلي والحمص والسمنة او الزيت والثوم والطحينية والمكسرات</p>
+                    <div class="menu-item-price">2JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('فتة', -1)">-</button>
+                    <span class="quantity-display" id="فتة">0</span> <!-- ID هو "فتة" -->
+                    <button class="quantity-button" onclick="updateQuantity('فتة', 1)">+</button>
+                </div>
+                
+            </div>
+
+
+            <div class="menu-item">
+                <img src="image/حلقوم.jpg" alt="حلقوم">
+                <div class="menu-item-info">
+                    <h3>حلقوم</h3>
+                    <p>الحلقوم هو حلوى شرقية تقليدية تُصنع من السكر والنشا، وتتميز بقوامها الناعم ونكهاتها المتنوعة مثل الورد والفستق.</p>
+                    <div class="menu-item-price">2JD</div>
+                </div>
+                <div class="item-quantity">
+                    <button class="quantity-button" onclick="updateQuantity('حلقوم', -1)">-</button>
+                    <span class="quantity-display" id="حلقوم">0</span> <!-- ID هو "حلقوم" -->
+                    <button class="quantity-button" onclick="updateQuantity('حلقوم', 1)">+</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="total-price" id="totalPrice">Total: $0.00</div>
+
+        <a href="#" class="confirm-button">Confirm Order</a>
+        <div class="links-container">
+            <a href="Untitled-1.html" class="link-box"> 1</a>
+            <a href="Untitled-2.html" class="link-box"> 2</a>
+            <a href="menu1.1.html" class="link-box"> 3</a>
+            <a href="menu2.2.html" class="link-box"> 4</a>
+            <a href="Saudi_and_Iraq.html" class="link-box"> 5</a>
+            <a href="Drinks.html" class="link-box"> 6</a>
+        </div>
+    </div>
+
+    <footer>
+  
+        جميع الحقوق محفوظة &copy; 2025 مطعم مائدة التُراث
+        <br>
+        اتصل بنا 0798654320
+      </footer>
+    <script src="java.js"></script> <!-- ربط ملف JavaScript -->
+</body>
+</html>
+
+

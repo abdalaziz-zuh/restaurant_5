@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقييم مطعمنا</title>
+    <link rel="stylesheet" href="Untitled-4.css">
+</head>
+<body>
+
+<div class="menu-container">
+    <div class="menu-header">
+        <h1>شاركنا رأيك في تجربتك معنا</h1>
+        <p>نحن في مطعمنا نقدر كل تقييم. ساعدنا في تحسين خدماتنا!</p>
+    </div>
+
+    <form action="#" method="post" class="feedback-form" id="feedback-form">
+        <!-- تقييم عام للمطعم -->
+        <div class="menu-item">
+            <h3>كيف كانت تجربتك العامة؟</h3>
+            <div class="rating" id="overall-rating">
+                <input type="radio" name="overall-rating" value="1" id="overall-1"><label for="overall-1">☆</label>
+                <input type="radio" name="overall-rating" value="2" id="overall-2"><label for="overall-2">☆</label>
+                <input type="radio" name="overall-rating" value="3" id="overall-3"><label for="overall-3">☆</label>
+                <input type="radio" name="overall-rating" value="4" id="overall-4"><label for="overall-4">☆</label>
+                <input type="radio" name="overall-rating" value="5" id="overall-5"><label for="overall-5">☆</label>
+            </div>
+        </div>
+
+        <!-- تقييم الطعام بشكل عام -->
+        <div class="menu-item">
+            <h3>كيف كان طعامنا؟</h3>
+            <div class="rating" id="food-rating">
+                <input type="radio" name="food-rating" value="1" id="food-1"><label for="food-1">☆</label>
+                <input type="radio" name="food-rating" value="2" id="food-2"><label for="food-2">☆</label>
+                <input type="radio" name="food-rating" value="3" id="food-3"><label for="food-3">☆</label>
+                <input type="radio" name="food-rating" value="4" id="food-4"><label for="food-4">☆</label>
+                <input type="radio" name="food-rating" value="5" id="food-5"><label for="food-5">☆</label>
+            </div>
+        </div>
+
+        <!-- تقييم الخدمة -->
+        <div class="menu-item">
+            <h3>كيف كانت الخدمة؟</h3>
+            <div class="rating" id="service-rating">
+                <input type="radio" name="service-rating" value="1" id="service-1"><label for="service-1">☆</label>
+                <input type="radio" name="service-rating" value="2" id="service-2"><label for="service-2">☆</label>
+                <input type="radio" name="service-rating" value="3" id="service-3"><label for="service-3">☆</label>
+                <input type="radio" name="service-rating" value="4" id="service-4"><label for="service-4">☆</label>
+                <input type="radio" name="service-rating" value="5" id="service-5"><label for="service-5">☆</label>
+            </div>
+        </div>
+
+        <!-- تقييم الأجواء -->
+        <div class="menu-item">
+            <h3>كيف كانت الأجواء في المطعم؟</h3>
+            <div class="rating" id="ambience-rating">
+                <input type="radio" name="ambience-rating" value="1" id="ambience-1"><label for="ambience-1">☆</label>
+                <input type="radio" name="ambience-rating" value="2" id="ambience-2"><label for="ambience-2">☆</label>
+                <input type="radio" name="ambience-rating" value="3" id="ambience-3"><label for="ambience-3">☆</label>
+                <input type="radio" name="ambience-rating" value="4" id="ambience-4"><label for="ambience-4">☆</label>
+                <input type="radio" name="ambience-rating" value="5" id="ambience-5"><label for="ambience-5">☆</label>
+            </div>
+        </div>
+
+        <!-- ملاحظات إضافية -->
+        <div class="menu-item">
+            <h3>هل لديك ملاحظات أخرى؟</h3>
+            <textarea name="additional-feedback" rows="4" placeholder="اكتب ملاحظاتك هنا..."></textarea>
+        </div>
+
+        <!-- زر إرسال التقييم -->
+        <div class="confirm-button">
+            <button type="submit" id="submit-feedback">إرسال التقييم</button>
+        </div>
+    </form>
+</div>
+
+
+
+<script src="Untitled-4.js"></script>
+</body>
+</html>
+
+

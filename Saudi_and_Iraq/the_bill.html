@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f1e3;
+            color: #4b4b4b;
+        }
+
+        .invoice-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .invoice-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .invoice-header h1 {
+            font-size: 2.5em;
+            color: #9e2a2f;
+        }
+
+        .invoice-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #7a4c31;
+            border-radius: 5px;
+            background-color: #fff7e6;
+        }
+
+        .invoice-item h3,
+        .invoice-item p {
+            margin: 0;
+        }
+
+        .total-price {
+            text-align: center;
+            font-size: 1.5em;
+            color: #9e2a2f;
+            margin-top: 20px;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7a4c31;
+            margin-top: 20px;
+        }
+
+        .confirm-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #7a4c31;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .confirm-button:hover {
+            background-color: #9e2a2f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <h1>الفاتورة </h1>
+        </div>
+        <div id="invoice-items"></div>
+        <div class="total-price" id="totalPrice">Total: 0.00 JD</div>
+        <p class="message" id="message"></p>
+        <a href="#" class="confirm-button" id="confirmButton">Confirm Order</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prices = {
+                qahwa: 3,
+                sahlab: 2,
+                banana_juice: 3,
+                avocado_cocktail: 4,
+                strawberry_cocktail: 4,
+                pomegranate_juice: 3,
+                lemon_mint_juice: 3.5 // السعر الجديد
+            };
+
+            const names = {
+                qahwa: "قهوة سعودية",
+                sahlab: "سحلب",
+                banana_juice: "عصير موز بالمكسرات",
+                avocado_cocktail: "كوكتيل أفوكادو",
+                strawberry_cocktail: "كوكتيل فراولة",
+                pomegranate_juice: "عصير رمان",
+                lemon_mint_juice: "عصير ليمون بالنعناع" // الاسم الجديد
+            };
+
+            let total = 0;
+            const invoiceItems = document.getElementById('invoice-items');
+            const message = document.getElementById('message');
+            const urlParams = new URLSearchParams(window.location.search);
+
+            let itemsSelected = false;
+
+            for (const item in prices) {
+                const quantity = parseInt(urlParams.get(item)) || 0;
+
+                if (quantity > 0) {
+                    itemsSelected = true;
+
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'invoice-item';
+                    itemElement.innerHTML = `
+                        <h3>${names[item]}</h3>
+                        <p>Quantity: ${quantity}</p>
+                        <p>Price: ${(prices[item] * quantity).toFixed(2)} JD</p>
+                    `;
+                    invoiceItems.appendChild(itemElement);
+                    total += prices[item] * quantity;
+                }
+            }
+
+            document.getElementById('totalPrice').textContent = `Total: ${total.toFixed(2)} JD`;
+
+            if (!itemsSelected) {
+                message.textContent = "لم يتم اختيار أي طلب.";
+                document.getElementById('confirmButton').style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>
